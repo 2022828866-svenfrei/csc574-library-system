@@ -52,7 +52,7 @@
             <tr>
                 <td>Street:</td>
                 <td>
-                    <input name="street" type="text" value="<?php echo $email; ?>">
+                    <input name="street" type="text" value="<?php echo $street; ?>">
                 </td>
             </tr>
             <tr>
