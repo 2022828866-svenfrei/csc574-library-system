@@ -11,23 +11,26 @@ body{background-color: #F9FAF5;
 
   .categoryline {border-bottom:0.5px dotted grey ;}
 
-/* mouse over link */
+  td:hover {background-color: coral;}
+
+
+  /* mouse over link 
   a:hover {
     background-color: #CBDAA2 ;
     text-decoration: none;
-  }
+  }*/
 
-  /* selected link */
+  /* selected link 
 a:active {
   color: rgb(255, 200, 0);
   text-decoration: none;
-}
+}*/
 
-/* visited link */
+/* visited link 
 a:visited {
   color: black;
   text-decoration: none;
-}
+}*/
 
 /* link */
 a{
