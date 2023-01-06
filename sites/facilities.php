@@ -16,9 +16,9 @@ Sunday & Public Holidays	: Closed <br>
 <p><h1>Facilities</h1></p>
 <table>
     <tr>
-        <td><img src="images/facilities/libraryentry.jpg" alt="entry" width="90%"></td>
-        <td><img src="images/facilities/memberstoragerack.jpg" alt="rack" width="90%"></td>
-        <td><img src="images/facilities/counter_front.jpg" alt="frontcounter" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/libraryentry.jpg" alt="entry" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/memberstoragerack.jpg" alt="rack" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/counter_front.jpg" alt="frontcounter" width="90%"></td>
     </tr>
     <tr>
         <td>KKSL Library entries.</td>
@@ -29,9 +29,9 @@ Sunday & Public Holidays	: Closed <br>
 <br><br>
 <table>
     <tr>
-        <td><img src="images/facilities/counter.jpg" alt="counter" width="90%"></td>
-        <td><img src="images/facilities/security2.jpg" alt="secure" width="90%"></td>
-        <td><img src="images/facilities/security.jpg" alt="security" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/counter.jpg" alt="counter" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/security2.jpg" alt="secure" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/security.jpg" alt="security" width="90%"></td>
     </tr>
     <tr>
         <td>Librarians are always there for you.</td>
@@ -42,9 +42,9 @@ Sunday & Public Holidays	: Closed <br>
 <br><br>
 <table>
     <tr>
-        <td><img src="images/facilities/computer.jpg" alt="computer" width="90%"></td>
-        <td><img src="images/facilities/computer2.jpg" alt="computer2" width="90%"></td>
-        <td><img src="images/facilities/book_section2.jpg" alt="book_section2" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/computer.jpg" alt="computer" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/computer2.jpg" alt="computer2" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/book_section2.jpg" alt="book_section2" width="90%"></td>
     </tr>
     <tr>
         <td>Computer and study area.</td>
@@ -55,9 +55,9 @@ Sunday & Public Holidays	: Closed <br>
 <br><br>
 <table>
     <tr>
-        <td><img src="images/facilities/book_section3.jpg" alt="book_section3" width="90%"></td>
-        <td><img src="images/facilities/book_section.jpg" alt="book_section" width="90%"></td>
-        <td><img src="images/facilities/studyarea.jpg" alt="studyarea" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/book_section3.jpg" alt="book_section3" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/book_section.jpg" alt="book_section" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/studyarea.jpg" alt="studyarea" width="90%"></td>
     </tr>
     <tr>
         <td>Book section.</td>
@@ -68,9 +68,9 @@ Sunday & Public Holidays	: Closed <br>
 <br><br>
 <table>
     <tr>
-        <td><img src="images/facilities/library.jpg" alt="library" width="90%"></td>
-        <td><img src="images/facilities/library1.jpg" alt="library1" width="90%"></td>
-        <td><img src="images/facilities/library2.jpg" alt="library2" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/library.jpg" alt="library" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/library1.jpg" alt="library1" width="90%"></td>
+        <td class="zoom"><img src="images/facilities/library2.jpg" alt="library2" width="90%"></td>
     </tr>
     <tr>
         <td>Students' work on the walls.</td>
