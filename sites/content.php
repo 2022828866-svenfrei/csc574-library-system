@@ -3,18 +3,16 @@
     <head><link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
 
 <style>
-/* img {
-  float: left;
-  padding: 10px;
-}*/
 
 img {
         max-width: 100%;
        
       }
-      .image {
+
+.image {
         flex-basis: 80%
       }
+
 .button {
   border: none;
   outline: 0;
@@ -31,17 +29,19 @@ img {
   background-color: #555;
 }
 .container {
-        display: flex;
-        align-items: center;
-        justify-content: center
-      }
+    display: flex;
+    align-items: center;
+    justify-content: center
+    }
 
-      .text {
-        
+.text {
         padding-left: 20px;
-        
+        }
 
-      }
+mark { 
+  background-color: yellow;
+  color: black;
+}
 
 
 </style>
@@ -56,10 +56,17 @@ Your one stop center </p><p align="center"><br><a href="facilities.php" target="
 <div class="container">
 <div class="image"><img src="images/home_picture.jpg" alt="bookracks"></td>
         </div>
-        <div class="text">
-        <p align="center" >Welcome to KKSL Library <br>
-Your one stop center <br><a href="facilities.php" target="content"><button class="button">Explore more</button></a></p>
+    <div class="text">
+        <p align="center" >Hi, Welcome to  <br>
+Your one stop center Library Website.<br><br>
+Don't hesitate to explore and don't <br>
+forget to register as a <b><mark>member.</mark></b> <br><br>
+You will receive new updates via <br>
+email each time a new post is updated.<br><br><br>
+<a href="facilities.php" target="content"><button class="button">Explore more</button></a><br><br>
+<i>"When in doubt go to the library."<br>
+J.K. Rowling </i></p>
   </div>
 </div>
-    </body>
+</body>
 </html>
