@@ -4,7 +4,6 @@
     <body class="p">
         <table style="width:100%">
             <tr>
-                <th align="left"><b>Contact</b></th>
                 <td><img src="images/college.png" alt="college" width="15" height="10">Kolej Komuniti Selandar, Jalan Batang Melaka,77500 Selandar, Melaka </td>
                 <td><img src="images/call.png" alt="college" width="15" height="10">Tel: 06-5253122</td>
                 <td><img src="images/fax.png" alt="college" width="15" height="10">Fax Num : 06-525 3158</td>

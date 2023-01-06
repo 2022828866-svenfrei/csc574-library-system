@@ -2,9 +2,15 @@
     <head><link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
 <style>
      td:hover {background-color: coral;}
+     body {
+  background-image: url('images/cat_background.png');
+  background-size: 230px 450px;
+  background-repeat: no-repeat;
+}
 </style>
 </head>
     <body>
+        
         <table style="width:100%">
         <tr>
         </tr>

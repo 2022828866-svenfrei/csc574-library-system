@@ -5,7 +5,8 @@
         <title>Home</title>
     </head>
 
-    <frameset rows="20%,*,5%" frameborder= "0">
+    <frameset rows="5%,20%,*," frameborder= "0">
+        <frame src="contact.php" name=contact>
         <frame src="header.php" name=header>
              <frameset cols="10%,15%,*,10%">
              <frame src="" name=no>
@@ -14,6 +15,6 @@
                     <frame src="" name=no>
 
     </frameset> 
-                    <frame src="contact.php" name=contact></frameset>
+                    </frameset>
 
                     </html>
