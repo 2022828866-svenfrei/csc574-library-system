@@ -13,7 +13,7 @@
         <td align="center">Books</td>
         <td align="center">Facilities</td>
         <td align="center">Login</td>
-        <td align="center">Register</td>
+        <td align="center"><a target="content" href="register.php">Register</a></td>
         </tr>
         
            
