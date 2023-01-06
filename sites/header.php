@@ -12,7 +12,7 @@
             </head>
     <body>
    <img src="images/kkslheader.png" alt="logoheader" width="900" height="90">
-    <table style="width:100%; font-color:white;" border=0 bgcolor=red >
+    <table style="width:80%; font-color:white;" border=0 bgcolor=red align="center">
        
         <tr>
         <td align="center"><a target="_top" href="index.php"><b>Home</b></a></td>
