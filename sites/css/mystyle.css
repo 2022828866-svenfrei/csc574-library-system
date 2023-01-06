@@ -11,22 +11,17 @@ body{background-color: #F9FAF5;
 
   .categoryline {border-bottom:0.5px dotted grey ;}
 
- 
-
-
- 
-
-  /* selected link 
+ /* selected link */
 a:active {
-  color: rgb(255, 200, 0);
+  color: white;
   text-decoration: none;
-}*/
+}
 
-/* visited link 
+/* visited link */
 a:visited {
-  color: black;
+  color: white;
   text-decoration: none;
-}*/
+}
 
 /* link */
 a{
