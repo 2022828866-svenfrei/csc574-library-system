@@ -2,20 +2,19 @@
 <html>
     <head><link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
     <style>
-         td:hover {background-color: coral;}
+        td:hover {background-color: white}
         </style>
             </head>
     <body>
-    <div><div><img src="images/kksllogo.png" alt="logo" width="100"></div>
-    <div><h1>Library One Stop Center to You</h1></div></div>
-    <table style="width:100%" border=0>
+   <img src="images/kksllogo.png" alt="logo" width="200" height="90">
+    <table style="width:100%; color:white;" border=0 bgcolor=red >
        
         <tr>
-        <td align="center">Home</td>
-        <td align="center">Books</td>
-        <td align="center">Facilities</td>
-        <td align="center">Login</td>
-        <td align="center"><a target="content" href="register.php">Register</a></td>
+        <td align="center"><b>Home</b></td>
+        <td align="center"><b>Books</b></td>
+        <td align="center"><b>Facilities</b></td>
+        <td align="center"><b>Login</b></td>
+        <td align="center"><a target="content" href="register.php"><b>Register</b></a></td>
         </tr>
         
            

@@ -14,11 +14,7 @@ body{background-color: #F9FAF5;
  
 
 
-  /* mouse over link */
-  a:hover {
-    background-color: none;
-    text-decoration: none;
-  }
+ 
 
   /* selected link 
 a:active {
