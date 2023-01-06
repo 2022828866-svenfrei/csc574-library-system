@@ -12,28 +12,34 @@
                 <th align="left" ><h2>Category</h2></th>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">General Novel</a></td>
+                <td class="categoryline"><a href="">General</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Romance</a></td>
+                <td class="categoryline"><a href="">Philosophy</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Lifestyle</a></td>
+                <td class="categoryline"><a href="">Religion</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Engineering & IT</a></td>
+                <td class="categoryline"><a href="">Social Science</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">History</a></td>
+                <td class="categoryline"><a href="">Language</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Science</a></td>
+                <td class="categoryline"><a href="">Pure Science</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Business & Management</a></td>
+                <td class="categoryline"><a href="">Technology</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Language & Dictionary</a></td>
+                <td class="categoryline"><a href="">Art</a></td>
+            </tr>
+            <tr>
+                <td class="categoryline"><a href="">Literature</a></td>
+            </tr>
+            <tr>
+                <td class="categoryline"><a href="">Geography & History</a></td>
             </tr>
         </table>
 
