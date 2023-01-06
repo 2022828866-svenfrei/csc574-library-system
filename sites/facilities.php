@@ -21,12 +21,12 @@ Sunday & Public Holidays	: Closed <br>
         <td><img src="images/facilities/counter_front.jpg" alt="frontcounter" width="90%"></td>
     </tr>
     <tr>
-        <td>KKSL Library entries</td>
-        <td>Members storage rack</td>
-        <td>Front counter</td>
+        <td>KKSL Library entries.</td>
+        <td>Members storage rack.</td>
+        <td>Front counter.</td>
     </tr>
 </table>
-
+<br><br>
 <table>
     <tr>
         <td><img src="images/facilities/counter.jpg" alt="counter" width="90%"></td>
@@ -34,12 +34,12 @@ Sunday & Public Holidays	: Closed <br>
         <td><img src="images/facilities/security.jpg" alt="security" width="90%"></td>
     </tr>
     <tr>
-        <td>Librarians are always there for you to help people find materials and resources</td>
-        <td></td>
-        <td></td>
+        <td>Librarians are always there for you.</td>
+        <td>Security scanner at the exit library.</td>
+        <td>Entry and exit library.</td>
     </tr>
 </table>
-
+<br><br>
 <table>
     <tr>
         <td><img src="images/facilities/computer.jpg" alt="computer" width="90%"></td>
@@ -47,12 +47,12 @@ Sunday & Public Holidays	: Closed <br>
         <td><img src="images/facilities/book_section2.jpg" alt="book_section2" width="90%"></td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Computer and study area.</td>
+        <td>Seating capacity of 10 users.</td>
+        <td>Magazine and newspaper section.</td>
     </tr>
 </table>
-
+<br><br>
 <table>
     <tr>
         <td><img src="images/facilities/book_section3.jpg" alt="book_section3" width="90%"></td>
@@ -60,12 +60,12 @@ Sunday & Public Holidays	: Closed <br>
         <td><img src="images/facilities/studyarea.jpg" alt="studyarea" width="90%"></td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Book section.</td>
+        <td>It can accommodate as many as 15,000 books.</td>
+        <td>Seating capacity of 100 users.</td>
     </tr>
 </table>
-
+<br><br>
 <table>
     <tr>
         <td><img src="images/facilities/library.jpg" alt="library" width="90%"></td>
@@ -73,9 +73,9 @@ Sunday & Public Holidays	: Closed <br>
         <td><img src="images/facilities/library2.jpg" alt="library2" width="90%"></td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Students' work on the walls.</td>
+        <td>Wall art for selfies.</td>
+        <td>Wall art for selfies.</td>
     </tr>
 </table>
 
