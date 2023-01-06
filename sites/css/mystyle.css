@@ -11,14 +11,14 @@ body{background-color: #F9FAF5;
 
   .categoryline {border-bottom:0.5px dotted grey ;}
 
-  td:hover {background-color: coral;}
+ 
 
 
-  /* mouse over link 
+  /* mouse over link */
   a:hover {
-    background-color: #CBDAA2 ;
+    background-color: none;
     text-decoration: none;
-  }*/
+  }
 
   /* selected link 
 a:active {

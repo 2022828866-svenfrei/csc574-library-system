@@ -1,5 +1,9 @@
 <html>
-    <head><link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css --></head>
+    <head><link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
+<style>
+     td:hover {background-color: coral;}
+</style>
+</head>
     <body>
         <table style="width:100%">
         <tr>
