@@ -2,7 +2,7 @@
 <html>
     <head><link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
     <style>
-        td:hover {background-color: white}
+        td:hover {background-color: white;}
         img {
   display: block;
   margin-left: auto;

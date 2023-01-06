@@ -65,7 +65,7 @@ You will receive new updates via <br>
 email each time a new post is updated.<br>
 <a href="facilities.php" target="content"><button class="button">Explore more</button></a><br><br><br><br>
 Don't forget to follow our official<br>
-<a href="https://www.facebook.com/kkselandarlestari/" target="_blank"><img src="images/facebook.png" alt="facebook" width="30" height="30"></a>&nbsp<a href="https://www.instagram.com/kk_selandar_official/?hl=en" target="_blank"><img src="images/instagram.png" alt="facebook" width="30" height="30"></a><br><br>
+<a href="https://www.facebook.com/kkselandarlestari/" target="_blank"><img src="images/facebook.png" alt="facebook" width="30" height="30"></a>&nbsp&nbsp&nbsp&nbsp<a href="https://www.instagram.com/kk_selandar_official/?hl=en" target="_blank"><img src="images/instagram.png" alt="facebook" width="30" height="30"></a>&nbsp&nbsp&nbsp&nbsp<a href="https://sites.google.com/staf.kkselandar.edu.my/lamankolejkomunitiselandar/utama" target="_blank"><img src="images/kkslicon.png" alt="facebook" width="50" height="30"></a><br><br>
 <i>"When in doubt go to the library."<br>
 J.K. Rowling </i><br><br>
 </p>
