@@ -4,14 +4,13 @@ body{background-color: #F9FAF5;
     
     
       }
-
+/*font size for contact info*/
   .p {
     font-size: 0.7em;
   }
 
 
-
-  .categoryline {border-bottom:0.5px dotted grey ;}
+.categoryline {border-bottom:0.5px dotted grey ;}
 
  /* selected link */
 a:active {
@@ -63,3 +62,7 @@ a{
   clear: both;
   display: table;
 }
+
+/*zoom hover the picture in about and facilities page*/
+.zoom:hover {
+  transform: scale(1.5);}

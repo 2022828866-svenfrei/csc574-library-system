@@ -71,7 +71,7 @@ tr:nth-child(even) {
   <div class="column">
 <table>
 <tr>
-        <td><img src="images/team/nelly.jpg" alt="nelly2" width="200" height="300"></td>
+        <td ><img src="images/team/nelly.jpg" alt="nelly2" width="150" height="250" ></td>
         
 </tr>
 <tr>
@@ -87,7 +87,7 @@ tr:nth-child(even) {
     
 </tr>
 <tr>
-    <td><button class="button">Contact</button></td>
+    <td><a href="http://wa.link/f85opz" target="_top"><button class="button">Contact</button></a></td>
 </tr>
 </table></div>
 <div class="column">

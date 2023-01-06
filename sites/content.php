@@ -62,10 +62,13 @@ Your one stop center Library Website.<br><br>
 Don't hesitate to explore and don't <br>
 forget to register as a <b><mark>member.</mark></b> <br><br>
 You will receive new updates via <br>
-email each time a new post is updated.<br><br><br>
-<a href="facilities.php" target="content"><button class="button">Explore more</button></a><br><br>
+email each time a new post is updated.<br>
+<a href="facilities.php" target="content"><button class="button">Explore more</button></a><br><br><br><br>
+Don't forget to follow our official<br>
+<a href="https://www.facebook.com/kkselandarlestari/" target="_blank"><img src="images/facebook.png" alt="facebook" width="30" height="30"></a>&nbsp<a href="https://www.instagram.com/kk_selandar_official/?hl=en" target="_blank"><img src="images/instagram.png" alt="facebook" width="30" height="30"></a><br><br>
 <i>"When in doubt go to the library."<br>
-J.K. Rowling </i></p>
+J.K. Rowling </i><br><br>
+</p>
   </div>
 </div>
 </body>
