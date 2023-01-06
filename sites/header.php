@@ -16,7 +16,7 @@
        
         <tr>
         <td align="center"><a target="_top" href="index.php"><b>Home</b></a></td>
-        <td align="center"><b>About</b></td>
+        <td align="center"><a target="content" href="about.php"><b>About</b></a></td>
         <td align="center"><a target="content" href="facilities.php"><b>Facilities</b></a></td>
         <td align="center"><b>Login</b></td>
         <td align="center"><a target="content" href="register.php"><b>Register</b></a></td>
