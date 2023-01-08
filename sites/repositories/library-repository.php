@@ -36,4 +36,15 @@ function insertUser(
     return $insertSuccessful;
 }
 
+function getUserByEmail($email)
+{
+    $conn = getDatabaseConnection();
+    $sql = "SELECT * FROM user WHERE Email = '" . $email . "';";
+    $result = $conn->query($sql);
+
+    $conn->close();
+
+    return $result->fetch_assoc();
+}
+
 ?>

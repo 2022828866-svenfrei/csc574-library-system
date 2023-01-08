@@ -1,0 +1,17 @@
+.errorMessage {
+    color: red;
+}
+
+.errorInput {
+    border-color: red;
+}
+
+.inputField {
+    width: 100%;
+}
+
+table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
