@@ -66,7 +66,6 @@
         }
 
         function validateInputField(field) {
-            console.log(field.value);
             if (field.value == "") {
                 field.className = "errorInput";
                 return false;

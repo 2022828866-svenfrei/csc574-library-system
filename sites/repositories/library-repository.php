@@ -17,6 +17,17 @@ function getDatabaseConnection()
     return $conn;
 }
 
+function getUserByEmail($email)
+{
+    $conn = getDatabaseConnection();
+    $sql = "SELECT * FROM user WHERE Email = '" . $email . "';";
+    $result = $conn->query($sql);
+
+    $conn->close();
+
+    return $result->fetch_assoc();
+}
+
 function insertUser(
     string $name,
     string $email,
@@ -36,15 +47,41 @@ function insertUser(
     return $insertSuccessful;
 }
 
-function getUserByEmail($email)
+function updateUser(
+    string $name,
+    string $email,
+    string $password,
+    string $street,
+    string $zip,
+    string $state
+)
 {
     $conn = getDatabaseConnection();
-    $sql = "SELECT * FROM user WHERE Email = '" . $email . "';";
+    $sql = "UPDATE user SET " .
+        "FullName = '$name', " .
+        "Email = '$email', " .
+        "Password = '$password', " .
+        "Street = '$street', " .
+        "Zip = '$zip', " .
+        "State = '$state'" .
+        "WHERE Email='$email';";
+    $updateSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $updateSuccessful;
+}
+
+function getBookingsByUserEmail($email)
+{
+    $conn = getDatabaseConnection();
+    $sql = "SELECT book.Name, borrow.ToDate, borrow.FromDate, borrow.IsBillSettled " .
+        "FROM borrow borrow JOIN user user ON borrow.UserFK = user.ID JOIN book book ON borrow.BookFK = book.ID " .
+        "WHERE Email = '" . $email . "';";
     $result = $conn->query($sql);
 
     $conn->close();
 
-    return $result->fetch_assoc();
+    return $result;
 }
-
 ?>
