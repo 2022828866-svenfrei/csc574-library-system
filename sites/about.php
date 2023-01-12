@@ -121,7 +121,7 @@
                 <div class="column">
                         <table>
                                 <tr>
-                                        <td><img src="images/team/arif.JPEG" alt="sven2" height="250"></td>
+                                        <td><img src="images/team/arif.JPEG" alt="arif" height="250"></td>
 
                                 </tr>
                                 <tr>
