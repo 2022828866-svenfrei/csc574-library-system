@@ -107,7 +107,7 @@
             <tr>
                 <td>Zip:</td>
                 <td>
-                    <input id="zipInput" class="inputField" name="zip" type="number" value="<?php echo $zip; ?>">
+                    <input id="zipInput" class="inputField" name="zip" type="number" min="0" value="<?php echo $zip; ?>">
                 </td>
             </tr>
             <tr>
