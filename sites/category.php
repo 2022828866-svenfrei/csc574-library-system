@@ -28,31 +28,31 @@
                 <td class="categoryline"><a href="general.php" target="content">General</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Philosophy</a></td>
+                <td class="categoryline"><a href="philosophy.php" target="content">Philosophy</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Religion</a></td>
+                <td class="categoryline"><a href="religion.php" target="content">Religion</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Social Science</a></td>
+                <td class="categoryline"><a href="socialscience.php" target="content">Social Science</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Language</a></td>
+                <td class="categoryline"><a href="language.php" target="content">Language</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Pure Science</a></td>
+                <td class="categoryline"><a href="purescience.php" target="content">Pure Science</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Technology</a></td>
+                <td class="categoryline"><a href="technology.php" target="content">Technology</a></td>
             </tr>
             <tr>
                 <td class="categoryline"><a href="art.php" target="content">Art</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Literature</a></td>
+                <td class="categoryline"><a href="literature.php" target="content">Literature</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Geography & History</a></td>
+                <td class="categoryline"><a href="geographyhistory.php" target="content">Geography & History</a></td>
             </tr>
         </table>
 
