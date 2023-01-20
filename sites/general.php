@@ -6,7 +6,7 @@ echo "<th>Author</th><th>Description</th>";
 echo "<th>ISBN</th><th>Picture</th>";
 echo "<th>View</th><th>Booking</th></tr>";*/
 echo "<table>";
-$result = mysqli_query($conn, "SELECT * FROM `book` ORDER BY `Category` ASC;");
+$result = mysqli_query($conn, "SELECT * FROM `book` WHERE `Category` = 'General';");
 while($row = mysqli_fetch_row($result)){
     echo "<tr><td>PICTURE HERE $row[8]</td>";
     echo "<td>&nbsp Book Name: $row[1]</td>";

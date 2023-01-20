@@ -25,7 +25,7 @@
                 <td class="categoryline"><a href="displayall.php" target="content">All</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">General</a></td>
+                <td class="categoryline"><a href="general.php" target="content">General</a></td>
             </tr>
             <tr>
                 <td class="categoryline"><a href="">Philosophy</a></td>
@@ -46,7 +46,7 @@
                 <td class="categoryline"><a href="">Technology</a></td>
             </tr>
             <tr>
-                <td class="categoryline"><a href="">Art</a></td>
+                <td class="categoryline"><a href="art.php" target="content">Art</a></td>
             </tr>
             <tr>
                 <td class="categoryline"><a href="">Literature</a></td>
