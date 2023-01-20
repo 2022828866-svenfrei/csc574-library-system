@@ -22,6 +22,9 @@
                 <th align="left" ><h2>Category</h2></th>
             </tr>
             <tr>
+                <td class="categoryline"><a href="displayall.php" target="content">All</a></td>
+            </tr>
+            <tr>
                 <td class="categoryline"><a href="">General</a></td>
             </tr>
             <tr>

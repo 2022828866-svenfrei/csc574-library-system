@@ -84,4 +84,8 @@ function getBookingsByUserEmail($email)
 
     return $result;
 }
+
+
+
+
 ?>
