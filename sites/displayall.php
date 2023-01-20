@@ -12,7 +12,7 @@ while($row = mysqli_fetch_row($result)){
     echo "<td>&nbsp Book Name: $row[1]</td>";
     echo "<td>&nbsp Category: $row[2]</td>";
     echo "<td>&nbspAuthor: $row[5]</td>";
-    echo "<td>&nbsp<a href=details.php?id=$row[0]>View More<a></td>";
+    echo "<td>&nbsp<a href=viewdetailbook.php?ID=$row[0]>View More<a></td>";
     echo "<td style='color:red'>&nbspPlease login as member!</td>";
     echo "</tr><br>";
     }
