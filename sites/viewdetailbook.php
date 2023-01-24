@@ -12,7 +12,7 @@ echo "<tr><td rowspan='8'>PICTURE HERE $row[8]</td>";
     echo "<tr><td>Place Publish: $row[4]<br></td></tr>";
     echo "<tr><td>Author: $row[5]<br></td></tr>";
     echo "<tr><td>ISBN:$row[7]<br></td><tr>";
-    echo "<tr><td style='color:red'>Please login as member!</td></tr>";
+    echo "<td style='color:red'><a href=borrow.php?ID=$row[0]>Borrow Now</td>";
     echo "</tr>";
     echo "</table>";
 mysqli_free_result($result);

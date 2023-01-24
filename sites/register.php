@@ -76,6 +76,8 @@
             }
         }
     </script>
+    <p><h1> Let's register! </h1></p>
+    <p style="text-align:center">Complete the form below to create a new member account. <b style="color:red">Each field is required.</b></p>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
         <table>

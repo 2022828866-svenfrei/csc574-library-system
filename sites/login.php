@@ -58,7 +58,8 @@
             }
         }
     </script>
-
+    <p><h1>Log In</h1></p>
+    <p style="text-align:center"><img src="images/login.png" alt="loginbaru" width="250" height="250"><br>Please enter your email and password to access your KKSL Library account.</p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
         <table>
             <tr>
