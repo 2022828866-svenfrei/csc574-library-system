@@ -1,7 +1,7 @@
 <?php
 include 'repositories/conn.php';
-$id = $_GET['BookID'];
-$result = mysqli_query($conn, "SELECT * FROM `book` WHERE `BookID` = $id;");
+$bookid = $_GET['ID'];
+$result = mysqli_query($conn, "SELECT * FROM `book` WHERE `ID` = $bookid;");
 $row = mysqli_fetch_row($result);
 echo "<table>";
 echo "<tr><td rowspan='8'>PICTURE HERE $row[8]</td>";
