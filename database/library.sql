@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 05:11 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 25, 2023 at 08:13 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `library`
 --
-CREATE DATABASE IF NOT EXISTS `library` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `library`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `library`;
 -- Table structure for table `book`
 --
 
-DROP TABLE IF EXISTS `book`;
 CREATE TABLE `book` (
   `ID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
@@ -41,15 +38,15 @@ CREATE TABLE `book` (
   `Image` text NOT NULL,
   `PublishPlace` varchar(100) NOT NULL,
   `Price` decimal(10,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `book`
 --
 
 INSERT INTO `book` (`ID`, `Name`, `Category`, `PublishDate`, `Author`, `Description`, `ISBNNumber`, `Image`, `PublishPlace`, `Price`) VALUES
-(1, 'Book 1', 'Drama', '2022-08-03', 'Sven', 'Desc.', '913939', '', 'Switzerland', '100'),
-(2, 'Book 2', 'Thriller', '2022-05-03', 'Fredson', 'Desc.', '2133', '', 'Switzerland', '100');
+(1, 'Book 1', 'Drama', '2022-08-03', 'Sven', 'Desc.', '913939', 'Book 1.jpg', 'Switzerland', '150'),
+(4, 'Power Parenting: Motivasi Anak Pintar', 'General', '2023-01-23', 'Tengku Asmadi', 'Setiap ibu bapa', '9789830976099', 'Power Parenting: Motivasi Anak Pintar.jpg', 'Selangor', '35');
 
 -- --------------------------------------------------------
 
@@ -57,25 +54,24 @@ INSERT INTO `book` (`ID`, `Name`, `Category`, `PublishDate`, `Author`, `Descript
 -- Table structure for table `borrow`
 --
 
-DROP TABLE IF EXISTS `borrow`;
 CREATE TABLE `borrow` (
   `ID` int(11) NOT NULL,
   `BookFK` int(11) NOT NULL,
   `UserFK` int(11) NOT NULL,
   `FromDate` date NOT NULL,
   `ToDate` date NOT NULL,
-  `IsBillSettled` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `IsBillSettled` tinyint(1) NOT NULL,
+  `Status` varchar(1) NOT NULL COMMENT 'B - borrowed; R - Returned'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `borrow`
 --
 
-INSERT INTO `borrow` (`ID`, `BookFK`, `UserFK`, `FromDate`, `ToDate`, `IsBillSettled`) VALUES
-(1, 1, 11, '2022-12-01', '2023-01-01', 1),
-(2, 2, 11, '2022-09-01', '2022-11-02', 1),
-(6, 1, 16, '0000-00-00', '0000-00-00', 0),
-(7, 1, 16, '2023-01-26', '2023-01-31', 0);
+INSERT INTO `borrow` (`ID`, `BookFK`, `UserFK`, `FromDate`, `ToDate`, `IsBillSettled`, `Status`) VALUES
+(1, 1, 11, '2022-12-01', '2023-01-01', 1, 'B'),
+(6, 1, 16, '0000-00-00', '0000-00-00', 0, 'R'),
+(7, 1, 16, '2023-01-26', '2023-01-31', 0, 'R');
 
 -- --------------------------------------------------------
 
@@ -83,7 +79,6 @@ INSERT INTO `borrow` (`ID`, `BookFK`, `UserFK`, `FromDate`, `ToDate`, `IsBillSet
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `Email` varchar(100) NOT NULL,
@@ -94,7 +89,7 @@ CREATE TABLE `user` (
   `FullName` varchar(100) NOT NULL,
   `UitmID` int(11) NOT NULL,
   `IsAdmin` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -109,7 +104,8 @@ INSERT INTO `user` (`ID`, `Email`, `Password`, `Street`, `Zip`, `State`, `FullNa
 (8, '2022828866@test.my', 'Test', 'Jalan abc', 400000, 'Selangor', 'Sven', 0, 0),
 (11, 'test@me.my', 'test', 'Jalan abc', 400000, 'Selangor', 'Sven', 0, 0),
 (13, 'test@student.uitm.edu.myy', 'test', 'Jalan abc', 400000, 'Selangor', 'Sven', 0, 0),
-(16, 'frei-sven@bluewin.ch', 'test', 'Nelkenweg', 8360, 'Thurgau', 'Sven Frei', 2022828867, 0);
+(16, 'frei-sven@bluewin.ch', 'test', 'Nelkenweg', 8360, 'Thurgau', 'Sven Frei', 2022828867, 0),
+(17, 'arifazman011@gmail.com', 'aaa', 'Astaka', 41050, 'Selangor', 'Arif Azman', 2021619936, 1);
 
 --
 -- Indexes for dumped tables
@@ -144,19 +140,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `borrow`
 --
 ALTER TABLE `borrow`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
