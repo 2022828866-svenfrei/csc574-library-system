@@ -183,7 +183,7 @@
                 <th>Book</th>
                 <th>From</th>
                 <th>To</th>
-                <th>Bill</th>
+                <th>Bill(RM)</th>
             </tr>
         </thead>
         <tbody>
