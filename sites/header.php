@@ -19,21 +19,35 @@
 <body>
     <?php
     require("repositories/cookie-repository.php");
+    require("repositories/library-repository.php");
 
     $isUserLoggedIn = getCurrentUser() != null;
-    ?>
 
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        try {
+            $admin = getAdminUser(getCurrentUser());
+        } catch (Exception $ex) {
+            $errorMessage = "Issue fetching user data!";
+        }
+    }
+    ?>
     <img src="images/kkslheader.png" alt="logoheader" width="900" height="90">
     <table style="width:80%; font-color:white;" border=0 bgcolor=red align="center">
 
         <tr>
             <td align="center"><a target="_top" href="index.php"><b>Home</b></a></td>
             <td align="center"><a target="content" href="about.php"><b>About</b></a></td>
-            <td align="center"><a target="content" href="facilities.php"><b>Facilities</b></a></td>
             <?php
             // display different header items based on the user login status
             if ($isUserLoggedIn) {
+                if ($admin) {
+                    ?>
+                    <td align="center"><a target="content" href="borrower.php"><b>Borrower</b></a></td>
+                    <td align="center"><a target="content" href="book.php"><b>Book</b></a></td>
+                    <?php
+                }
                 ?>
+                <td align="center"><a target="content" href="facilities.php"><b>Facilities</b></a></td>
                 <td align="center"><a target="content" href="personal.php"><b>Personal</b></a></td>
                 <td align="center"><a href="logout.php"><b>Logout</b></a></td>
                 <?php
@@ -45,9 +59,6 @@
             }
             ?>
         </tr>
-
-
     </table>
 </body>
-
 </html>
