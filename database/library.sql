@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 08:13 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Jan 25, 2023 at 11:06 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `library`
 --
+CREATE DATABASE IF NOT EXISTS `library` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `library`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `book`
 --
 
+DROP TABLE IF EXISTS `book`;
 CREATE TABLE `book` (
   `ID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
@@ -38,7 +41,7 @@ CREATE TABLE `book` (
   `Image` text NOT NULL,
   `PublishPlace` varchar(100) NOT NULL,
   `Price` decimal(10,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `book`
@@ -54,6 +57,7 @@ INSERT INTO `book` (`ID`, `Name`, `Category`, `PublishDate`, `Author`, `Descript
 -- Table structure for table `borrow`
 --
 
+DROP TABLE IF EXISTS `borrow`;
 CREATE TABLE `borrow` (
   `ID` int(11) NOT NULL,
   `BookFK` int(11) NOT NULL,
@@ -62,7 +66,7 @@ CREATE TABLE `borrow` (
   `ToDate` date NOT NULL,
   `IsBillSettled` tinyint(1) NOT NULL,
   `Status` varchar(1) NOT NULL COMMENT 'B - borrowed; R - Returned'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `borrow`
@@ -79,6 +83,7 @@ INSERT INTO `borrow` (`ID`, `BookFK`, `UserFK`, `FromDate`, `ToDate`, `IsBillSet
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `Email` varchar(100) NOT NULL,
@@ -89,7 +94,7 @@ CREATE TABLE `user` (
   `FullName` varchar(100) NOT NULL,
   `UitmID` int(11) NOT NULL,
   `IsAdmin` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
