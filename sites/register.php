@@ -16,6 +16,7 @@
 
     $name = "";
     $email = "";
+    $uitmId = "";
     $street = "";
     $zip = "";
     $state = "";
@@ -25,13 +26,14 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
+        $uitmId = $_POST["uitmId"];
         $street = $_POST["street"];
         $zip = $_POST["zip"];
         $state = $_POST["state"];
         $password = $_POST["password"];
 
         try {
-            $insertSuccessful = insertUser($name, $email, $password, $street, $zip, $state);
+            $insertSuccessful = insertUser($name, $email, $uitmId, $password, $street, $zip, $state);
 
             if ($insertSuccessful) {
                 setCurrentUser($email);
@@ -51,6 +53,7 @@
 
             isInputValid = validateInputField(document.getElementById("nameInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("emailInput")) && isInputValid;
+            isInputValid = validateInputField(document.getElementById("uitmIdInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("streetInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("zipInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("stateInput")) && isInputValid;
@@ -76,8 +79,11 @@
             }
         }
     </script>
-    <p><h1> Let's register! </h1></p>
-    <p style="text-align:center">Complete the form below to create a new member account. <b style="color:red">Each field is required.</b></p>
+    <p>
+    <h1> Let's register! </h1>
+    </p>
+    <p style="text-align:center">Complete the form below to create a new member account. <b style="color:red">Each field
+            is required.</b></p>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
         <table>
@@ -101,6 +107,13 @@
                 </td>
             </tr>
             <tr>
+                <td>Staff or Student Id:</td>
+                <td>
+                    <input id="uitmIdInput" class="inputField" name="uitmId" type="uitmId"
+                        value="<?php echo $uitmId; ?>">
+                </td>
+            </tr>
+            <tr>
                 <td>Street:</td>
                 <td>
                     <input id="streetInput" class="inputField" name="street" type="text" value="<?php echo $street; ?>">
@@ -109,7 +122,8 @@
             <tr>
                 <td>Zip:</td>
                 <td>
-                    <input id="zipInput" class="inputField" name="zip" type="number" min="0" value="<?php echo $zip; ?>">
+                    <input id="zipInput" class="inputField" name="zip" type="number" min="0"
+                        value="<?php echo $zip; ?>">
                 </td>
             </tr>
             <tr>

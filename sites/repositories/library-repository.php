@@ -31,6 +31,7 @@ function getUserByEmail($email)
 function insertUser(
     string $name,
     string $email,
+    string $uitmId,
     string $password,
     string $street,
     string $zip,
@@ -38,8 +39,8 @@ function insertUser(
 )
 {
     $conn = getDatabaseConnection();
-    $sql = "INSERT INTO user (FullName, Email, Password, Street, Zip, State, IsAdmin) " .
-        "VALUES ('$name', '$email', '$password', '$street', $zip, '$state', '0')";
+    $sql = "INSERT INTO user (FullName, Email, UitmID, Password, Street, Zip, State, IsAdmin) " .
+        "VALUES ('$name', '$email', $uitmId, '$password', '$street', $zip, '$state', '0')";
     $insertSuccessful = $conn->query($sql);
 
     $conn->close();
@@ -50,6 +51,7 @@ function insertUser(
 function updateUser(
     string $name,
     string $email,
+    string $uitmId,
     string $password,
     string $street,
     string $zip,
@@ -60,6 +62,7 @@ function updateUser(
     $sql = "UPDATE user SET " .
         "FullName = '$name', " .
         "Email = '$email', " .
+        "UitmId = '$uitmId', " .
         "Password = '$password', " .
         "Street = '$street', " .
         "Zip = '$zip', " .

@@ -25,6 +25,7 @@
 
             isInputValid = validateInputField(document.getElementById("nameInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("emailInput")) && isInputValid;
+            isInputValid = validateInputField(document.getElementById("uitmIdInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("streetInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("zipInput")) && isInputValid;
             isInputValid = validateInputField(document.getElementById("stateInput")) && isInputValid;
@@ -81,13 +82,14 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
+        $uitmId = $_POST["uitmId"];
         $street = $_POST["street"];
         $zip = $_POST["zip"];
         $state = $_POST["state"];
         $password = $_POST["password"];
 
         try {
-            $updateSuccessful = updateUser($name, $email, $password, $street, $zip, $state);
+            $updateSuccessful = updateUser($name, $email, $uitmId, $password, $street, $zip, $state);
 
             if ($updateSuccessful) {
                 setCurrentUser($email);
@@ -123,6 +125,13 @@
                 <td>
                     <input id="emailInput" class="inputField" name="email" type="email"
                         value="<?php echo $user["Email"]; ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>Staff or Student Id:</td>
+                <td>
+                    <input id="uitmIdInput" class="inputField" name="uitmId" type="uitmId"
+                        value="<?php echo $user["UitmID"]; ?>">
                 </td>
             </tr>
             <tr>
