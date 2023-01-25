@@ -115,7 +115,7 @@
                                 </tr>
                                 <tr>
                                         <td>
-                                                <a href="https://www.linkedin.com/in/frei-sven/">
+                                                <a href="https://www.linkedin.com/in/frei-sven/" target="_top">
                                                         <button class="button">Contact</button>
                                                 </a>
                                         </td>
@@ -148,7 +148,7 @@
                 <div class="column">
                         <table>
                                 <tr>
-                                        <td>picture here</td>
+                                        <td><img src="images/team/nabil.jpeg" alt="nabil" height="250" target="_top" ></td>
 
                                 </tr>
                                 <tr>
@@ -164,7 +164,7 @@
 
                                 </tr>
                                 <tr>
-                                        <td><button class="button">Contact</button></td>
+                                        <td><a href="https://www.instagram.com/draco_darkwing/"><button class="button">Contact</button></a></td>
                                 </tr>
                         </table>
                 </div>
