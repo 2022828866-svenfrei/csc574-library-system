@@ -131,6 +131,7 @@
                         <option value="Technology">Technology</option>
                         <option value="Art">Art</option>
                         <option value="Literature">Literature</option>
+                        <option value="Geography & History">Geography & History</option>
                         </select>
                 </td>
             </tr>
