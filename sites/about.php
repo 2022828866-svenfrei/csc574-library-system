@@ -114,7 +114,11 @@
 
                                 </tr>
                                 <tr>
-                                        <td><button class="button">Contact</button></td>
+                                        <td>
+                                                <a href="https://www.linkedin.com/in/frei-sven/">
+                                                        <button class="button">Contact</button>
+                                                </a>
+                                        </td>
                                 </tr>
                         </table>
                 </div>
