@@ -88,7 +88,111 @@ function getBookingsByUserEmail($email)
     return $result;
 }
 
+function getAllBooked()
+{
+    $conn = getDatabaseConnection();
+    $sql = "SELECT book.ID, book.Name, user.FullName, borrow.ToDate, borrow.FromDate, CASE WHEN borrow.IsBillSettled='1' THEN 'PAID' WHEN borrow.IsBillSettled='0' THEN 'N/A' END AS IsBillSettled, CASE WHEN borrow.Status='B' THEN 'Borrowed' WHEN borrow.Status='R' THEN 'Returned' END AS Status " .
+        "FROM borrow borrow JOIN user user ON borrow.UserFK = user.ID JOIN book book ON borrow.BookFK = book.ID " .
+        "WHERE 1=1";
+    $result = $conn->query($sql);
 
+    $conn->close();
 
+    return $result;
+}
 
+function getAdminUser($email)
+{
+    $conn = getDatabaseConnection();
+    $sql = "SELECT * FROM user " .
+            "WHERE Email = '" . $email . "'".
+            " AND IsAdmin = 1;";
+    $result = $conn->query($sql);
+
+    $conn->close();
+
+    return $result->fetch_assoc();
+}
+
+function getAllBook() {
+    $conn = getDatabaseConnection();
+    $sql = "SELECT ID, Name, Category, ISBNNumber " .
+            "FROM book ";
+    $result = $conn->query($sql);
+
+    $conn->close();
+
+    return $result;
+}
+
+function insertBook(
+    string $name,
+    string $category,
+    string $desc,
+    string $date,
+    string $place,
+    string $author,
+    string $isbn,
+    string $image,
+    int $price
+) {
+    $conn = getDatabaseConnection();
+    $sql = "INSERT INTO book (Name, Category, PublishDate, Author, Description, ISBNNumber, Image, PublishPlace, Price) " .
+        "VALUES ('$name', '$category', '$date', '$author', '$desc', '$isbn', '$image', '$place', $price)";
+    $insertSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $insertSuccessful;
+}
+
+function updateBook(
+    string $name,
+    string $category,
+    string $desc,
+    string $date,
+    string $place,
+    string $author,
+    string $isbn,
+    string $image,
+    int $price
+) {
+    $conn = getDatabaseConnection();
+    $sql = "UPDATE book SET " .
+        "Name = '$name', " .
+        "Category = '$category', " .
+        "PublishDate = '$date', " .
+        "Author = '$author', " .
+        "Description = '$desc', " .
+        "Image = '$image'," .
+        "PublishPlace = '$place'," .
+        "Price = '$price'" .
+        "WHERE ISBNNumber = '$isbn'; ";
+    $updateSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $updateSuccessful;
+}
+
+function deleteBook(int $id) {
+    $conn = getDatabaseConnection();
+    $sql = "DELETE FROM book " .
+        "WHERE ID = '$id';";
+    $updateSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $updateSuccessful;
+}
+
+function getBookDetail($ID) {
+    $conn = getDatabaseConnection();
+    $sql = "SELECT ID, Name, Category, PublishDate, Author, Description, ISBNNumber, Image, PublishPlace, Price FROM book WHERE ID = '" . $ID . "'";
+    $result = $conn->query($sql);
+
+    $conn->close();
+
+    return $result->fetch_assoc();
+}
 ?>
