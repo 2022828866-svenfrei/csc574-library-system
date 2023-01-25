@@ -8,13 +8,13 @@ echo "<th>View</th><th>Booking</th></tr>";*/
 echo "<table>";
 $result = mysqli_query($conn, "SELECT * FROM `book` WHERE `Category` = 'General';");
 while($row = mysqli_fetch_row($result)){
-    echo "<tr><td>PICTURE HERE $row[8]</td>";
+    echo "<tr><td>PICTURE HERE $row[7]</td>";
     echo "<td>&nbsp Book Name: $row[1]</td>";
     echo "<td>&nbsp Category: $row[2]</td>";
-    echo "<td>&nbspAuthor: $row[5]</td>";
+    echo "<td>&nbspAuthor: $row[4]</td>";
     echo "<td>&nbsp<a href=viewdetailbook.php?ID=$row[0]>View More<a></td>";
     echo "<td style='color:red'><a href=borrow.php?ID=$row[0]>Borrow Now</td>";
-    echo "</tr><br>";
+    echo "</tr>";
     }
 echo "</table>";
 mysqli_free_result($result);
