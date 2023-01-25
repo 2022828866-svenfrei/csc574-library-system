@@ -4,14 +4,7 @@
 <head>
     <title>Borrow</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
-    <link rel="stylesheet" type="text/css" href="css/userstyle.css"> <!--link to userstyle.css -->
-
-    <style>
-        /* .borrowingTable {
-            border: 1px solid;
-        }*/
-    </style>
-</head>
+ </head>
 
 <body>
     <script>
@@ -20,44 +13,14 @@
             window.location = loc.protocol + '//' + loc.host + loc.pathname + loc.search;
         }
 
-        /*function validateForm() {
-            let isInputValid = true;
-
-            isInputValid = validateInputField(document.getElementById("nameInput")) && isInputValid;
-            isInputValid = validateInputField(document.getElementById("emailInput")) && isInputValid;
-            isInputValid = validateInputField(document.getElementById("streetInput")) && isInputValid;
-            isInputValid = validateInputField(document.getElementById("zipInput")) && isInputValid;
-            isInputValid = validateInputField(document.getElementById("stateInput")) && isInputValid;
-            isInputValid = validateInputField(document.getElementById("passwordInput")) && isInputValid;
-            isInputValid = validateInputField(document.getElementById("confirmPasswordInput")) && isInputValid;
-
-            if (document.getElementById("passwordInput").value !== document.getElementById("confirmPasswordInput").value) {
-                document.getElementById("confirmPasswordInput").className = "errorInput";
-                return false;
-            }
-
-            return isInputValid;
-        }
-
-        function validateInputField(field) {
-            if (field.value == "") {
-                field.className = "errorInput";
-                return false;
-            }
-            else {
-                field.className = "";
-                return true;
-            }
-        }*/
+        
     </script>
 
     <?php
     require("repositories/library-repository.php");
     require("repositories/cookie-repository.php");
     include 'repositories/conn.php';
-    /* $bookid = $_GET['ID'];
-    $result = mysqli_query($conn, "SELECT * FROM `book` WHERE `ID` = $bookid");
-    $row = mysqli_fetch_row($result);*/
+   
 
     $errorMessage = "";
     $user = null;
@@ -81,7 +44,7 @@
         }
     }
     ?>
-
+    <p><h2> Please choose a date to borrow the book and a date to return it. </h2></p>
     <form method="post" action="borrow_process.php" onsubmit="">
         <table>
 
@@ -101,8 +64,7 @@
             <tr>
                 <td>Book ID:</td>
                 <td>
-                    <input id="bookid_form" name="bookid" type="text" value="<?php echo $bookid = $_GET['ID']; ?>"
-                        readonly>
+                    <input id="bookid_form" name="bookid" type="text" value="<?php echo $bookid = $_GET['ID']; ?>" readonly>
                 </td>
             </tr>
             <tr>
@@ -119,7 +81,7 @@
             </tr>
             <tr>
                 <td>
-                    <input class="submitButton" type="submit" value="Continue">
+                    <br><input class="submitButton" type="submit" value="Continue">
                 </td>
             </tr>
         </table>

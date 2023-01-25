@@ -4,13 +4,9 @@
 <head>
     <title>Borrow Status</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
-    <link rel="stylesheet" type="text/css" href="css/userstyle.css"> <!--link to userstyle.css -->
 
-    <style>
-        .borrowingTable {
-            border: 1px solid;
-        }
-    </style>
+
+   
 </head>
 
 <body>
