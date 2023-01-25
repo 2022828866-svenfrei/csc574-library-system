@@ -9,6 +9,10 @@ body{background-color: #F9FAF5;
     font-size: 0.7em;
   }
 
+  /*font size for book information*/
+  .fontp {
+    font-size: 0.9em;
+  }
 
 .categoryline {border-bottom:0.5px dotted grey ;}
 

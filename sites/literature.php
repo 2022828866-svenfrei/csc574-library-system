@@ -7,7 +7,7 @@
 
 </head>
 
-<body>
+<body class="fontp">
 <?php
 include 'repositories/conn.php';
 /

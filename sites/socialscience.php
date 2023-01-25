@@ -7,7 +7,7 @@
 
 </head>
 
-<body>
+<body class="fontp">
 <?php
 include 'repositories/conn.php';
 /*echo "<table border='1'><tr><th>Name</th><th>Category</th>";
