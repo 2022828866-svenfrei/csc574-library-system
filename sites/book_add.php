@@ -122,7 +122,16 @@
             <tr>
                 <td>Category:</td>
                 <td>
-                    <input id="categoryInput" class="inputField" name="category" type="test" value="<?php echo $category; ?>">
+                <select id="categoryInput" name="category" value="<?php echo $category; ?>">
+                        <option value="Genaral">General</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Religion">Religion</option>
+                        <option value="Language">Language</option>
+                        <option value="Pure Science">Pure Science</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Art">Art</option>
+                        <option value="Literature">Literature</option>
+                        </select>
                 </td>
             </tr>
             <tr>
