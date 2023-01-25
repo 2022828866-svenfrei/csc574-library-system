@@ -148,7 +148,7 @@
                 <div class="column">
                         <table>
                                 <tr>
-                                        <td><img src="images/team/nabil.jpeg" alt="nabil" height="250" target="_top" ></td>
+                                        <td><img src="images/team/nabil.jpeg" alt="nabil" height="250"  ></td>
 
                                 </tr>
                                 <tr>
@@ -164,7 +164,7 @@
 
                                 </tr>
                                 <tr>
-                                        <td><a href="https://www.instagram.com/draco_darkwing/"><button class="button">Contact</button></a></td>
+                                        <td><a href="https://www.facebook.com/dracodarkwing000/" target="_top"><button class="button">Contact</button></a></td>
                                 </tr>
                         </table>
                 </div>
