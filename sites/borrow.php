@@ -31,7 +31,7 @@
             $user = getUserByEmail(getCurrentUser());
 
             if ($user == null) {
-                $errorMessage = "Please log in your member account!";
+                $errorMessage = "<b style='color:red'>Please log in your member account!</b>";
             }
         } catch (Exception $ex) {
             $errorMessage = "Issue fetching user data!";

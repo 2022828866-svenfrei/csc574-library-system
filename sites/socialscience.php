@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Personal Page</title>
+    <title>Social Science</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
 
 </head>
@@ -10,11 +10,7 @@
 <body class="fontp">
 <?php
 include 'repositories/conn.php';
-/*echo "<table border='1'><tr><th>Name</th><th>Category</th>";
-echo "<th>Publish Date</th><th>Publish Place</th>";
-echo "<th>Author</th><th>Description</th>";
-echo "<th>ISBN</th><th>Picture</th>";
-echo "<th>View</th><th>Booking</th></tr>";*/
+echo "<p><h1>Social Science</h1></p>";
 echo "<table>";
 $result = mysqli_query($conn, "SELECT * FROM `book` WHERE `Category` = 'Social Science';");
 while($row = mysqli_fetch_row($result)){

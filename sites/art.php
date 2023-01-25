@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Personal Page</title>
+    <title>Art</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
 
 </head>
@@ -10,7 +10,7 @@
 <body class="fontp">
 <?php
 include 'repositories/conn.php';
-
+echo "<p><h1>Art</h1></p>";
 echo "<table>";
 $result = mysqli_query($conn, "SELECT * FROM `book` WHERE `Category` = 'Art';");
 while($row = mysqli_fetch_row($result)){

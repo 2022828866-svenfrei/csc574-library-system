@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Personal Page</title>
+    <title>Technology</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
 
 </head>
@@ -10,9 +10,9 @@
 <body class="fontp">
 <?php
 include 'repositories/conn.php';
-
+echo "<p><h1>Technology</h1></p>";
 echo "<table>";
-$result = mysqli_query($conn, "SELECT * FROM `book` WHERE `Category` = 'Pure Science';");
+$result = mysqli_query($conn, "SELECT * FROM `book` WHERE `Category` = 'Technology';");
 while($row = mysqli_fetch_row($result)){
     echo '<tr><td><img style="height: 100px; width: 100px;" src="images/uploads/'.$row[7].'"></td>';
     echo "<td>&nbsp ||Book Name: $row[1]</td>";
