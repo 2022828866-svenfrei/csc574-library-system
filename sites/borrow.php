@@ -36,12 +36,6 @@
         } catch (Exception $ex) {
             $errorMessage = "Issue fetching user data!";
         }
-
-        try {
-            $borrowings = getBookingsByUserEmail(getCurrentUser());
-        } catch (Exception $ex) {
-            $errorMessage += "<br>Issue fetching borrowing data!";
-        }
     }
     ?>
     <p><h2> Please choose a date to borrow the book and a date to return it. </h2></p>

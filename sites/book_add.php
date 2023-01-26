@@ -182,9 +182,13 @@
                         value="<?php echo $image; ?>">
                 </td>
             </tr>
-        </table>
-        <button type="submit" class="submitButton">Save</button>
-        <button type="button" onclick="history.back();">Back</button>
+            <tr>
+                <td colspan="2" align="right">
+                    <button type="submit" class="submitButton">Save</button>
+                    <button type="button" onclick="history.back();">Back</button>
+                </td>
+            </tr>
+        </table>        
     </form>
 </body>
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Add Book</title>
+    <title>Update Book</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
     <link rel="stylesheet" type="text/css" href="css/userstyle.css"> <!--link to userstyle.css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -82,7 +82,7 @@
                             echo "<script>reloadAsGet(" . $id . ", 'Book (" . $name . ") successfully updated');</script>"; // reload page with js command with GET request
                             echo "Book ($name) successfully updated"; // reload page with js command
                         } else {
-                            $errorMessage = "The insert was unsuccesful, please try again.";
+                            $errorMessage = "The update was unsuccesful, please try again.";
                         }
                     } catch (Exception $ex) {
                         $errorMessage = $ex->getMessage();
@@ -153,16 +153,16 @@
                 <td>Category:</td>
                 <td>
                     <select id="categoryInput" name="category" value="<?php echo $book["Category"]; ?>">
-                        <option value="General">General</option>
-                        <option value="Philosophy">Philosophy</option>
-                        <option value="Religion">Religion</option>
-                        <option value="Social Science">Social Science</option>
-                        <option value="Language">Language</option>
-                        <option value="Pure Science">Pure Science</option>
-                        <option value="Technology">Technology</option>
-                        <option value="Art">Art</option>
-                        <option value="Literature">Literature</option>
-                        <option value="Geography & History">Geography & History</option>
+                        <option value="General" <?php if($book["Category"] == "General") echo 'selected="selected"'; ?>>General</option>
+                        <option value="Philosophy" <?php if($book["Category"] == "Philosophy") echo 'selected="selected"'; ?>>Philosophy</option>
+                        <option value="Religion" <?php if($book["Category"] == "Religion") echo 'selected="selected"'; ?>>Religion</option>
+                        <option value="Social Science" <?php if($book["Category"] == "Social Science") echo 'selected="selected"'; ?>>Social Science</option>
+                        <option value="Language" <?php if($book["Category"] == "Language") echo 'selected="selected"'; ?>>Language</option>
+                        <option value="Pure Science" <?php if($book["Category"] == "Pure Science") echo 'selected="selected"'; ?>>Pure Science</option>
+                        <option value="Technology" <?php if($book["Category"] == "Technology") echo 'selected="selected"'; ?>>Technology</option>
+                        <option value="Art" <?php if($book["Category"] == "Art") echo 'selected="selected"'; ?>>Art</option>
+                        <option value="Literature" <?php if($book["Category"] == "Literature") echo 'selected="selected"'; ?>>Literature</option>
+                        <option value="Geography & History" <?php if($book["Category"] == "Geography & History") echo 'selected="selected"'; ?>>Geography & History</option>
                     </select>
                 </td>
             </tr>
@@ -217,9 +217,14 @@
             <tr>
                 <td><input hidden name="ID" value="<?php echo $id; ?>"></td>
             </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <button type="submit" class="submitButton">Save</button>
+                    <button type="button" onclick="window.location='book.php'">Back</button>
+                </td>
+            </tr>
         </table>
-        <button type="submit" class="submitButton">Save</button>
-        <button type="button" onclick="history.back();">Back</button>
+        
     </form>
 </body>
 

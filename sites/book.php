@@ -34,7 +34,7 @@
 				<th>Name</th>
 				<th>Category</th>
 				<th>ISBN Number</th>
-				<th>Action</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -43,8 +43,8 @@
 				echo "<tr><td><a href=viewdetailbook.php?ID=" . $row["ID"] . ">" . $row["Name"] . "</a></td>" .
 					"<td>" . $row["Category"] . "</td>" .
 					"<td>" . $row["ISBNNumber"] . "</td>";
-				echo "<td><button onclick=" . "window.location='book_update.php?ID=" . $row["ID"] ."';" . ">Update</button>&nbsp;";
-				echo "<button onclick=" . "window.location='book_delete.php?ID=" . $row["ID"] ."';" . ">Delete</button></td></tr>";
+				echo "<td><input type='button' value='Update' onclick=" . "window.location='book_update.php?ID=" . $row["ID"] ."';" . ">&nbsp;";
+				echo "<input type='button' value='Delete' onclick=" . "window.location='book_delete.php?ID=" . $row["ID"] ."';" . "></td></tr>";
 			}
 			?>
 		</tbody>

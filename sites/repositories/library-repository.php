@@ -78,9 +78,12 @@ function updateUser(
 function getBookingsByUserEmail($email)
 {
     $conn = getDatabaseConnection();
-    $sql = "SELECT book.Name, borrow.ToDate, borrow.FromDate, borrow.IsBillSettled " .
-        "FROM borrow borrow JOIN user user ON borrow.UserFK = user.ID JOIN book book ON borrow.BookFK = book.ID " .
-        "WHERE Email = '" . $email . "';";
+    $sql = "SELECT book.Name, borrow.ToDate, borrow.FromDate, COALESCE(receipt.Penalty,0.00) as Penalty  " .
+        "FROM borrow borrow " .
+        "JOIN user user ON borrow.UserFK = user.ID " .
+        "JOIN book book ON borrow.BookFK = book.ID " .
+        "LEFT JOIN receipt receipt ON receipt.BorrowFK = borrow.ID " .
+        "WHERE user.Email = '" . $email . "';";
     $result = $conn->query($sql);
 
     $conn->close();
@@ -165,10 +168,10 @@ function updateBook(
         "PublishDate = '$date', " .
         "Author = '$author', " .
         "Description = '$desc', " .
-        "Image = '$image'," .
-        "PublishPlace = '$place'," .
-        "Price = '$price'" .
-        "ISBNNumber = '$isbn'" .
+        "Image = '$image', " .
+        "PublishPlace = '$place', " .
+        "Price = '$price', " .
+        "ISBNNumber = '$isbn' " .
         "WHERE ID = $id; ";
     $updateSuccessful = $conn->query($sql);
 
@@ -245,17 +248,34 @@ function updateReceipt(
 }
 
 function getReceipt(
-    int $id
+    int $id,
 ) {
     $conn = getDatabaseConnection();
-    $sql = "SELECT book.Name, receipt.LateDay, receipt.Penalty" .
+    $sql = "SELECT borrow.ID, book.Name, user.FullName, borrow.ToDate, borrow.FromDate, receipt.Penalty, borrow.Status " .
         "FROM receipt receipt " .
-        "INNER JOIN borrow borrow on receipt.BorrowFK = borrow.ID " .
-        "INNER JOIN book book on borrow.BookFK = book.ID " .
+        "JOIN borrow borrow on receipt.BorrowFK = borrow.ID " .
+        "JOIN user user ON borrow.UserFK = user.ID " .
+        "JOIN book book ON borrow.BookFK = book.ID " .
         "WHERE receipt.BorrowFK = $id;";
-    $getReceipt = $conn->query($sql);
+    $result = $conn->query($sql);
+
     $conn->close();
 
-    return $getReceipt;
+    return $result->fetch_assoc();
+}
+
+function updateBorrowStatus(
+    int $id,
+    string $status
+) {
+    $conn = getDatabaseConnection();
+    $sql = "UPDATE borrow SET " .
+        "Status = '$status' " .
+        "WHERE ID = $id; ";
+    $updateSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $updateSuccessful;
 }
 ?>

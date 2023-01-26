@@ -57,6 +57,7 @@
             <?php
             } else {
                 ?>
+                <td align="center"><a target="content" href="facilities.php"><b>Facilities</b></a></td>
                 <td align="center"><a target="content" href="login.php"><b>Login</b></a></td>
                 <td align="center"><a target="content" href="register.php"><b>Register</b></a></td>
                 <?php

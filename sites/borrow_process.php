@@ -23,7 +23,7 @@ $datestart = $_POST['datestart'];
 $dateend = $_POST['dateend'];
 
 
-$sql = "INSERT INTO `borrow`(`BookFK`, `UserFK`, `FromDate`, `ToDate`) VALUES ($bookid, $userid, '$datestart', '$dateend')";
+$sql = "INSERT INTO `borrow`(`BookFK`, `UserFK`, `FromDate`, `ToDate`, `Status`) VALUES ($bookid, $userid, '$datestart', '$dateend', 'B')";
 if (!mysqli_query($conn, $sql)) {
     die('Error: ' . mysqli_error($conn));
 }

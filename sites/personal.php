@@ -5,12 +5,11 @@
     <title>Personal Page</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
     <link rel="stylesheet" type="text/css" href="css/userstyle.css"> <!--link to userstyle.css -->
-
-    <style>
-        .borrowingTable {
-            border: 1px solid;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -105,7 +104,6 @@
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
         <table>
-
             <tr>
                 <td colspan="2">
                     <p class="errorMessage">
@@ -177,22 +175,25 @@
 
     <br>
 
-    <table class="borrowingTable">
-        <thead>
+    <table align="center" class="table"  style="width: 70%;">
+        <thead class="table-light">
             <tr>
-                <th>Book</th>
-                <th>From</th>
-                <th>To</th>
-                <th>Bill(RM)</th>
+                <th width="55%">Book</th>
+                <th width="15%" style="text-align:center">From</th>
+                <th width="15%" style="text-align:center">To</th>
+                <th width="15%" style="text-align:right">Bill (RM)</th>
             </tr>
         </thead>
         <tbody>
             <?php
             while ($row = $borrowings->fetch_assoc()) {
+                $fromDate = date('d/m/Y', strtotime($row["FromDate"]));
+                $toDate = date('d/m/Y', strtotime($row["ToDate"]));
+
                 echo "<tr><td>" . $row["Name"] . "</td>" .
-                    "<td>" . $row["FromDate"] . "</td>" .
-                    "<td>" . $row["ToDate"] . "</td>" .
-                    "<td>" . $row["IsBillSettled"] . "</td></tr>";
+                    "<td align=center>" . $fromDate . "</td>" .
+                    "<td align=center>" . $toDate . "</td>" .
+                    "<td align=right>" . $row["Penalty"] . "</td></tr>";
             }
             ?>
         </tbody>
