@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `library`
 --
+CREATE DATABASE IF NOT EXISTS `library` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `library`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `book`
 --
 
+DROP TABLE IF EXISTS `book`;
 CREATE TABLE `book` (
   `ID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
@@ -57,6 +60,7 @@ INSERT INTO `book` (`ID`, `Name`, `Category`, `PublishDate`, `Author`, `Descript
 -- Table structure for table `borrow`
 --
 
+DROP TABLE IF EXISTS `borrow`;
 CREATE TABLE `borrow` (
   `ID` int(11) NOT NULL,
   `BookFK` int(11) NOT NULL,
@@ -84,6 +88,7 @@ INSERT INTO `borrow` (`ID`, `BookFK`, `UserFK`, `FromDate`, `ToDate`, `IsBillSet
 -- Table structure for table `receipt`
 --
 
+DROP TABLE IF EXISTS `receipt`;
 CREATE TABLE `receipt` (
   `ID` int(11) NOT NULL,
   `BorrowFK` int(11) NOT NULL,
@@ -108,6 +113,7 @@ INSERT INTO `receipt` (`ID`, `BorrowFK`, `LateDay`, `Penalty`) VALUES
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `Email` varchar(100) NOT NULL,

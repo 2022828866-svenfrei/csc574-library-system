@@ -152,8 +152,18 @@
             <tr>
                 <td>Category:</td>
                 <td>
-                    <input id="categoryInput" class="inputField" name="category" type="test"
-                        value="<?php echo $book["Category"]; ?>">
+                    <select id="categoryInput" name="category" value="<?php echo $book["Category"]; ?>">
+                        <option value="General">General</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Religion">Religion</option>
+                        <option value="Social Science">Social Science</option>
+                        <option value="Language">Language</option>
+                        <option value="Pure Science">Pure Science</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Art">Art</option>
+                        <option value="Literature">Literature</option>
+                        <option value="Geography & History">Geography & History</option>
+                    </select>
                 </td>
             </tr>
             <tr>
