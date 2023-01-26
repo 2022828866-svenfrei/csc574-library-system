@@ -28,7 +28,7 @@
 	?>
 	<br>
 
-	<table class="table table-dark table-striped" style="margin-left: 0;">
+	<table class="table table-striped" style="margin-left: 0;">
 		<thead>
 			<tr>
 				<th>Name</th>
@@ -43,7 +43,7 @@
 				echo "<tr><td><a href=viewdetailbook.php?ID=" . $row["ID"] . ">" . $row["Name"] . "</a></td>" .
 					"<td>" . $row["Category"] . "</td>" .
 					"<td>" . $row["ISBNNumber"] . "</td>";
-				echo "<td><button onclick=" . "window.location='book_update.php?ID=" . $row["ID"] ."';" . ">Update</button>";
+				echo "<td><button onclick=" . "window.location='book_update.php?ID=" . $row["ID"] ."';" . ">Update</button>&nbsp;";
 				echo "<button onclick=" . "window.location='book_delete.php?ID=" . $row["ID"] ."';" . ">Delete</button></td></tr>";
 			}
 			?>
