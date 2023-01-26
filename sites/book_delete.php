@@ -7,6 +7,19 @@
 		<link rel="stylesheet" type="text/css" href="css/userstyle.css"> <!--link to userstyle.css -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+		<style>
+	        fieldset {
+	            margin-inline-start: 2px;
+	            margin-inline-end: 2px;
+	            padding-block-start: 0.35em;
+	            padding-inline-start: 0.75em;
+	            padding-inline-end: 0.75em;
+	            padding-block-end: 0.625em;
+	            min-inline-size: min-content; 
+	            border: 2px solid black;
+	        }
+	    </style>
 </head>
 
 <body>
@@ -53,52 +66,66 @@
 	}  
 	?>
 	<br><br>
+	<table style="width: 100%; margin-left: 0;">
+        <thead>
+            <tr>
+                <th width="50%" style="text-align: left; padding: 10px;"><h3>Delete</h3></th>
+                <th width="50%" style="text-align: right; padding: 10px;"><h3>Book</h3></th>
+            </tr>
+        </thead>
+    </table>
+
 	<!-- Button trigger modal -->
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <table style="margin-left: 0; width: 95%;">
-            <tr>
-                <td colspan="2">
-                    <p class="errorMessage">
-                        <?php echo $errorMessage; ?>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" rowspan="9" width="15%"><?php echo '<img style="height: 300px; width: 300px;" src="images/uploads/'.$detailBook["Image"].'">'; ?></td>
-            </tr>
-            <tr>
-                <td width="10%">Book Name:</td>
-                <td><?php echo $detailBook["Name"]; ?></td>
-                <td><input type="hidden" name="id" value="<?php echo $id; ?>"></td>
-            </tr>
-            <tr>
-                <td width="10%">Category:</td>
-                <td><?php echo $detailBook["Category"]; ?></td>
-            </tr>
-            <tr>
-                <td width="10%">Description:</td>
-                <td align="justify"><?php echo $detailBook["Description"]; ?></td>
-            </tr>
-            <tr>
-                <td width="10%">Date Publish:</td>
-                <td><?php echo date_format($date,"d/m/Y"); ?></td>
-            </tr>
-            <tr>
-                <td width="10%">Place Publish:</td>
-                <td><?php echo $detailBook["PublishPlace"]; ?></td>
-            </tr>
-            <tr>
-                <td width="10%">Author:</td>
-                <td><?php echo $detailBook["Author"]; ?></td>
-            </tr>
-            <tr>
-                <td width="10%">ISBN:</td>
-                <td><?php echo $detailBook["ISBNNumber"]; ?></td>
-            </tr>
-            <tr>
-                <td width="10%">Price:</td>
-                <td><?php echo $detailBook["Price"]; ?></td>
-            </tr>
+		<fieldset>
+	        <table style="margin-left: 0; width: 95%;">
+	            <tr>
+	                <td colspan="2">
+	                    <p class="errorMessage">
+	                        <?php echo $errorMessage; ?>
+	                    </p>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td align="center" rowspan="9" width="15%"><?php echo '<img style="height: 300px; width: 300px;" src="images/uploads/'.$detailBook["Image"].'">'; ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Book Name:</td>
+	                <td><?php echo $detailBook["Name"]; ?></td>
+	                <td><input type="hidden" name="id" value="<?php echo $id; ?>"></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Category:</td>
+	                <td><?php echo $detailBook["Category"]; ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Description:</td>
+	                <td align="justify"><?php echo $detailBook["Description"]; ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Date Publish:</td>
+	                <td><?php echo date_format($date,"d/m/Y"); ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Place Publish:</td>
+	                <td><?php echo $detailBook["PublishPlace"]; ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Author:</td>
+	                <td><?php echo $detailBook["Author"]; ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">ISBN:</td>
+	                <td><?php echo $detailBook["ISBNNumber"]; ?></td>
+	            </tr>
+	            <tr>
+	                <td width="10%">Price:</td>
+	                <td><?php echo $detailBook["Price"]; ?></td>
+	            </tr>
+	        </table>
+	    </fieldset>
+	    <br>
+        <table style="width: 100%; margin-left: 0;">
             <tr>
                 <td></td>
                 <td></td>

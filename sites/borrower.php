@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Book Returned</title>
+	<title>Borrower</title>
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css"> <!--link to mystyle.css -->
 	<link rel="stylesheet" type="text/css" href="css/userstyle.css"> <!--link to userstyle.css -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,16 +33,6 @@
 </head>
 
 <body>
-	<script>
-		function printDiv(divName) {
-			var printContents = document.getElementById(divName).innerHTML;
-			var originalContents = document.body.innerHTML;
-
-			document.body.innerHTML = printContents;
-			window.print();
-			document.body.innerHTML = originalContents;
-		}
-	</script>
 	<?php
 	require("repositories/library-repository.php");
 
@@ -58,6 +48,13 @@
 	?>
 	<br>
 
+	<table style="width: 100%; margin-left: 0;">
+		<thead>
+			<tr>
+				<th width="50%" style="text-align: center;"><h3>Borrower</h3></th>
+			</tr>
+		</thead>
+	</table>
 	<fieldset>
 		<table class="table table-striped" style="margin-left: 0;">
 			<thead>
@@ -121,6 +118,15 @@
 	</fieldset>
 
 	<script>
+		function printDiv(divName) {
+			var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
+
 		function onPrintClick(bookName, lateDaysAmount, penalty) {
 			const tableBody = document.getElementById('modalTableBody');
 			tableBody.innerHTML = 

@@ -10,6 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+
+    <style>
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                width: 100%;
+            }
+        }
+
+        fieldset {
+            margin-inline-start: 2px;
+            margin-inline-end: 2px;
+            padding-block-start: 0.35em;
+            padding-inline-start: 0.75em;
+            padding-inline-end: 0.75em;
+            padding-block-end: 0.625em;
+            min-inline-size: min-content; 
+            border: 2px solid black;
+            width: 70%;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,6 +84,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         try {
             $user = getUserByEmail(getCurrentUser());
+            $admin = getAdminUser(getCurrentUser());
 
             if ($user == null) {
                 $errorMessage = "Issue fetching user data!";
@@ -101,6 +124,24 @@
         }
     }
     ?>
+   
+    <table style="width: 100%; margin-left: 0;">
+        <thead>
+            <tr>
+                <?php
+                if ($admin) {
+                ?>
+                    <th width="50%" style="text-align: center;"><h3>Admin</h3></th>
+                <?php
+                } else {
+                ?>  
+                    <th width="50%" style="text-align: center;"><h3>Personal</h3></th>
+                <?php
+                }
+                ?>
+            </tr>
+        </thead>
+    </table>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
         <table>
@@ -175,29 +216,117 @@
 
     <br>
 
-    <table align="center" class="table"  style="width: 70%;">
-        <thead class="table-light">
-            <tr>
-                <th width="55%">Book</th>
-                <th width="15%" style="text-align:center">From</th>
-                <th width="15%" style="text-align:center">To</th>
-                <th width="15%" style="text-align:right">Bill (RM)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            while ($row = $borrowings->fetch_assoc()) {
-                $fromDate = date('d/m/Y', strtotime($row["FromDate"]));
-                $toDate = date('d/m/Y', strtotime($row["ToDate"]));
+    <fieldset>
+        <table align="center" class="table" style="margin: 0;">
+            <thead class="table-light">
+                <tr>
+                    <th width="55%">Book</th>
+                    <th width="15%" style="text-align:center">From</th>
+                    <th width="15%" style="text-align:center">To</th>
+                    <th width="15%" style="text-align:right">Bill (RM)</th>
+                    <th width="15%">Print</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row = $borrowings->fetch_assoc()) {
+                    $fromDate = date('d/m/Y', strtotime($row["FromDate"]));
+                    $toDate = date('d/m/Y', strtotime($row["ToDate"]));
+                   
+                    $bookName = $row["Name"];
+                    $totalPrice = $row["Penalty"];
+                    $diffInDays = $row["LateDay"];
 
-                echo "<tr><td>" . $row["Name"] . "</td>" .
-                    "<td align=center>" . $fromDate . "</td>" .
-                    "<td align=center>" . $toDate . "</td>" .
-                    "<td align=right>" . $row["Penalty"] . "</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+                    echo "<tr><td>" . $bookName . "</td>" .
+                        "<td align=center>" . $fromDate . "</td>" .
+                        "<td align=center>" . $toDate . "</td>" .
+                        "<td align=right>" . $totalPrice . "</td>" .
+                        "<td><input type='button' onClick='onPrintClick(\"$bookName\", \"$diffInDays\", \"$totalPrice\")' value='Print'>". 
+                        "</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <script>
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+
+        function onPrintClick(bookName, lateDaysAmount, penalty) {
+            const tableBody = document.getElementById('modalTableBody');
+            tableBody.innerHTML = 
+            "<tr>" +
+                "<td>" + 1 + "</td>" +
+                "<td>" + bookName + "</td>" +
+                "<td align=center>" + lateDaysAmount + "</td>" +
+                "<td align=right>" + penalty + "</td>" +
+            "</tr>" + 
+            "<tr>" +
+                "<td colspan=3><b>Total</b></td>" +
+                "<td align=right><b>" + penalty + "</b></td>"
+            "</tr>";
+
+            document.getElementsByClassName('modal')[0].style.display = 'block';
+        }
+    </script>
+
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Receipt</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="document.getElementsByClassName('modal')[0].style.display='none'"></button>
+                </div>
+                <div id="printReceipt" class="modal-body" align="center">
+                    <table class="table table-borderless" style="margin-left: 0">
+                        <thead>
+                            <tr>
+                                <td scope="col" align="center"><img src="images/kkslheader.png" alt="logoheader"
+                                        width="200" height="20"></td>
+                            </tr>
+                            <tr>
+                                <td scope="col" align="center"><b>Kolej Komuniti Selandar</b><br>Jalan Batang
+                                    Melaka,77500 Selandar, Melaka</td>
+                            </tr>
+                            <tr>
+                                <td scope="col" align="right"><b>
+                                        <?php echo date("d/m/Y"); ?>
+                                    </b></td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table class="table" style="margin-left: 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Book Name</th>
+                                <th scope="col" style="text-align: center">Late (Days)</th>
+                                <th scope="col" style="text-align: right">Penalty (RM)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modalTableBody">
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="document.getElementsByClassName('modal')[0].style.display='none'">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="printDiv('printReceipt')">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

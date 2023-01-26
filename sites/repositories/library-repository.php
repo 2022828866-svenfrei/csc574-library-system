@@ -78,7 +78,7 @@ function updateUser(
 function getBookingsByUserEmail($email)
 {
     $conn = getDatabaseConnection();
-    $sql = "SELECT book.Name, borrow.ToDate, borrow.FromDate, COALESCE(receipt.Penalty,0.00) as Penalty  " .
+    $sql = "SELECT book.Name, borrow.ToDate, borrow.FromDate, COALESCE(receipt.Penalty,0.00) as Penalty, receipt.LateDay  " .
         "FROM borrow borrow " .
         "JOIN user user ON borrow.UserFK = user.ID " .
         "JOIN book book ON borrow.BookFK = book.ID " .
