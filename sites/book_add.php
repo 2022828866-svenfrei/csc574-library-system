@@ -126,6 +126,7 @@
                         <option value="Genaral">General</option>
                         <option value="Philosophy">Philosophy</option>
                         <option value="Religion">Religion</option>
+                        <option value="Religion">Social Science</option>
                         <option value="Language">Language</option>
                         <option value="Pure Science">Pure Science</option>
                         <option value="Technology">Technology</option>
