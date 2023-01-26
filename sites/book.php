@@ -48,6 +48,13 @@
 			</tr>
 		</thead>
 	</table>
+	<br>
+	<table style="width: 100%; margin-left: 0;">
+		<tr>
+			<td align="right"><button onclick="window.location='book_add.php';">Add Book</button></td>
+		</tr>
+	</table>
+	<br>
 	<fieldset>
 		<table class="table table-striped" style="margin-left: 0;">
 			<thead>
@@ -72,12 +79,6 @@
 		</table>
 	</fieldset>
 	<br>
-	<table style="width: 100%; margin-left: 0;">
-		<tr>
-			<td align="right"><button onclick="window.location='book_add.php';">Add Book</button></td>
-		</tr>
-	</table>
-	
 </body>
 
 </html>
