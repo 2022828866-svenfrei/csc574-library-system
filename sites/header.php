@@ -36,7 +36,6 @@
 
         <tr>
             <td align="center"><a target="_top" href="index.php"><b>Home</b></a></td>
-            <td align="center"><a target="content" href="about.php"><b>About</b></a></td>
             <?php
             // display different header items based on the user login status
             if ($isUserLoggedIn) {
@@ -44,13 +43,18 @@
                     ?>
                     <td align="center"><a target="content" href="borrower.php"><b>Borrower</b></a></td>
                     <td align="center"><a target="content" href="book.php"><b>Book</b></a></td>
+                    <td align="center"><a target="content" href="personal.php"><b>Admin</b></a></td>
+                    <?php
+                } else {
+                    ?>
+                    <td align="center"><a target="content" href="about.php"><b>About</b></a></td>
+                    <td align="center"><a target="content" href="facilities.php"><b>Facilities</b></a></td>
+                    <td align="center"><a target="content" href="personal.php"><b>Personal</b></a></td>
                     <?php
                 }
                 ?>
-                <td align="center"><a target="content" href="facilities.php"><b>Facilities</b></a></td>
-                <td align="center"><a target="content" href="personal.php"><b>Personal</b></a></td>
                 <td align="center"><a href="logout.php"><b>Logout</b></a></td>
-                <?php
+            <?php
             } else {
                 ?>
                 <td align="center"><a target="content" href="login.php"><b>Login</b></a></td>
