@@ -91,7 +91,7 @@ function getBookingsByUserEmail($email)
 function getAllBooked()
 {
     $conn = getDatabaseConnection();
-    $sql = "SELECT book.ID, book.Name, user.FullName, borrow.ToDate, borrow.FromDate, CASE WHEN borrow.IsBillSettled='1' THEN 'PAID' WHEN borrow.IsBillSettled='0' THEN 'N/A' END AS IsBillSettled, CASE WHEN borrow.Status='B' THEN 'Borrowed' WHEN borrow.Status='R' THEN 'Returned' END AS Status " .
+    $sql = "SELECT borrow.ID, book.Name, user.FullName, borrow.ToDate, borrow.FromDate, borrow.IsBillSettled, CASE WHEN borrow.Status='B' THEN 'Borrowed' WHEN borrow.Status='R' THEN 'Returned' END AS Status " .
         "FROM borrow borrow JOIN user user ON borrow.UserFK = user.ID JOIN book book ON borrow.BookFK = book.ID " .
         "WHERE 1=1";
     $result = $conn->query($sql);
@@ -147,6 +147,7 @@ function insertBook(
 }
 
 function updateBook(
+    int $id,
     string $name,
     string $category,
     string $desc,
@@ -167,7 +168,8 @@ function updateBook(
         "Image = '$image'," .
         "PublishPlace = '$place'," .
         "Price = '$price'" .
-        "WHERE ISBNNumber = '$isbn'; ";
+        "ISBNNumber = '$isbn'" .
+        "WHERE ID = $id; ";
     $updateSuccessful = $conn->query($sql);
 
     $conn->close();
@@ -194,5 +196,66 @@ function getBookDetail($ID) {
     $conn->close();
 
     return $result->fetch_assoc();
+}
+
+function checkReceipt(
+    int $id
+) {
+    $conn = getDatabaseConnection();
+    $sql = "SELECT borrow.Status " .
+        "FROM receipt receipt " .
+        "INNER JOIN borrow borrow on receipt.BorrowFK = borrow.ID " .
+        "WHERE receipt.BorrowFK = $id;";
+    $checkReceipt = $conn->query($sql);
+    $conn->close();
+
+    return $checkReceipt->fetch_assoc();
+}
+
+function insertReceipt(
+    int $id,
+    int $day,
+    float $price
+) {
+    $conn = getDatabaseConnection();
+    $sql = "INSERT INTO receipt (BorrowFK, LateDay, Penalty) " .
+        "VALUES ($id, $day, $price)";
+    $insertSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $insertSuccessful;
+}
+
+function updateReceipt(
+    int $id,
+    int $day,
+    float $price
+) {
+    $conn = getDatabaseConnection();
+    $sql = "UPDATE receipt SET " .
+        "LateDay = $day, " .
+        "Penalty = $price " .
+        "WHERE BorrowFK = $id; ";
+    $updateSuccessful = $conn->query($sql);
+
+    $conn->close();
+
+    return $updateSuccessful;
+}
+
+function getReceipt(
+    int $id
+) {
+    $conn = getDatabaseConnection();
+    $sql = "SELECT book.Name, receipt.LateDay, receipt.Penalty" .
+        "FROM receipt receipt " .
+        "INNER JOIN borrow borrow on receipt.BorrowFK = borrow.ID " .
+        "INNER JOIN book book on borrow.BookFK = book.ID " .
+        "WHERE receipt.BorrowFK = $id;";
+    $getReceipt = $conn->query($sql);
+    $conn->close();
+
+    return $getReceipt;
 }
 ?>

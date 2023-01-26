@@ -75,7 +75,7 @@
 
                     try {
                         // Insert image content into database 
-                        $updateSuccessful = updateBook($name, $category, $desc, $date, $place, $author, $isbn, $newImgName, $price);
+                        $updateSuccessful = updateBook($id, $name, $category, $desc, $date, $place, $author, $isbn, $newImgName, $price);
 
                         if ($updateSuccessful) {
                             move_uploaded_file($file_tmp, $file_destination);
