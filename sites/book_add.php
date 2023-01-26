@@ -123,7 +123,7 @@
                 <td>Category:</td>
                 <td>
                 <select id="categoryInput" name="category" value="<?php echo $category; ?>">
-                        <option value="Genaral">General</option>
+                        <option value="General">General</option>
                         <option value="Philosophy">Philosophy</option>
                         <option value="Religion">Religion</option>
                         <option value="Social Science">Social Science</option>
